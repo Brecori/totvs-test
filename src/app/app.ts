@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Select } from './components/select/select';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [Select],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
