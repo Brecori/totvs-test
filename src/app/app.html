@@ -1,12 +1,5 @@
 <main>
-  <aside>
-    <h2>Navigation</h2>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </aside>
+  <app-aside-bar />
   <section class="container">
     <app-select
       [options]="[
@@ -16,8 +9,8 @@
       ]"
       [placeholder]="'Select an option'"
       [isDisabled]="false"
-      [isRequired]="false"
+      [isRequired]="true"
     ></app-select>
+    <app-switch></app-switch>
   </section>
-  <!-- <app-switch></app-switch> -->
 </main>

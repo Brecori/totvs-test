@@ -1,0 +1,66 @@
+.switch-container {
+  position: relative;
+  display: inline-block;
+  width: 4.8rem;
+  height: 1.6rem;
+
+  &:focus-within {
+    outline-color: var(--color-focus);
+    outline-width: 0.4rem;
+    outline-style: solid;
+    outline-offset: 0.4rem;
+  }
+}
+
+.switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked {
+    & + .switch-slider {
+      background-color: var(--color-grace);
+
+      &::before {
+        transform: translateX(2.6rem) translateY(50%);
+        border-color: var(--color-authentic-blue);
+        background-color: var(--color-authentic-blue);
+        background-image: url('/icons/check.svg');
+      }
+    }
+  }
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-disabled);
+  border-radius: 1.6rem;
+  transition: background-color 0.3s ease;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 100%;
+    left: 0;
+    border: 0.3rem solid var(--color-arrow);
+    bottom: 50%;
+    transform: translateY(50%) translateX(-0.6rem);
+    background-color: var(--color-white);
+    transform-origin: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.6rem 1.6rem;
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      background-color 0.3s ease,
+      background-image 0.3s ease;
+  }
+}
