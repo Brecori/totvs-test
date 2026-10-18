@@ -1,26 +1,25 @@
-<app-control-page [component]="'Switch'">
-
+<app-control-page
+  [component]="'Switch'"
+  [formMode]="formMode()"
+  (formModeChange)="formMode.set($event)"
+>
   <div preview>
     @if (formMode() === 'ngModel') {
       <app-switch
         [ngModel]="reactiveControl.value"
         (ngModelChange)="reactiveControl.setValue($event)"
         [disabled]="reactiveControl.disabled"
+        label="Componente Switch de Demonstração"
+        (valueChange)="lastValue.set($event)"
       />
     } @else {
       <app-switch
         [formControl]="reactiveControl"
-        [disabled]="reactiveControl.disabled"
+        label="Componente Switch de Demonstração"
+        (valueChange)="lastValue.set($event)"
       />
     }
   </div>
-
-  <app-checkbox
-    controls
-    label="Ativo / Desativo"
-    [isChecked]="reactiveControl.value"
-    (isCheckedChange)="reactiveControl.setValue($event)"
-  />
 
   <app-checkbox
     controls
@@ -28,4 +27,6 @@
     [isChecked]="reactiveControl.disabled"
     (isCheckedChange)="setReactiveDisabled($event)"
   />
+
+  <p controls>{{ lastValue() === null ? 'Nenhum evento' : lastValue() }}</p>
 </app-control-page>

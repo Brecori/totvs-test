@@ -58,7 +58,6 @@
   min-height: 4.4rem;
   padding: 1.1rem 0.8rem;
   border-radius: 0.4rem;
-  min-width: 40rem;
   width: 100%;
   appearance: none;
   position: relative;
@@ -88,10 +87,6 @@
 
   &:focus {
     outline: none;
-  }
-
-  @media (max-width: 599px) {
-    min-width: 100%;
   }
 }
 

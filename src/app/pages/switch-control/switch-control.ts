@@ -12,6 +12,7 @@ import { FormMode } from '../../components/control-page/form-mode';
   templateUrl: './switch-control.html',
 })
 export class SwitchControl {
+  readonly lastValue = signal<boolean | null>(null);
   protected readonly formMode = signal<FormMode>('reactive');
   readonly modelValue = signal(false);
   readonly modelDisabled = signal(false);

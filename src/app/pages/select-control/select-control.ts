@@ -49,6 +49,7 @@ export class SelectControl {
 
   deleteOption(value: string): void {
     this.options = this.options.filter((option) => option.value !== value);
+    this.reactiveControl.setValue('');
   }
 
   addOption(): void {
