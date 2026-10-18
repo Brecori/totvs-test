@@ -8,8 +8,8 @@
     right: 1.6rem;
     width: 0.8rem;
     height: 0.8rem;
-    border-right: 0.2rem solid var(--color-arrow);
-    border-bottom: 0.2rem solid var(--color-arrow);
+    border-right: 0.2rem solid var(--color-hydrocarbon);
+    border-bottom: 0.2rem solid var(--color-hydrocarbon);
     transform: translateY(-75%) rotate(45deg);
     transform-origin: center;
     transition:
@@ -21,13 +21,13 @@
 
   &.disabled {
     &::after {
-      border-color: var(--color-text-empty);
+      border-color: var(--color-frost-silver);
     }
   }
 
   &.required:has(.select:invalid) {
     &::after {
-      border-color: var(--color-error);
+      border-color: var(--color-emerson);
     }
   }
 
@@ -37,17 +37,17 @@
 
   &:hover:not(.disabled) {
     &::after {
-      border-color: var(--color-hover);
+      border-color: var(--color-persian-blue);
     }
 
     .select {
-      background-color: var(--color-background-hover);
-      border-color: var(--color-text-empty);
+      background-color: var(--color-bright-grey);
+      border-color: var(--color-frost-silver);
     }
   }
 
   &:focus-within {
-    outline-color: var(--color-focus);
+    outline-color: var(--color-black-rock);
     outline-width: 0.4rem;
     outline-style: solid;
     outline-offset: 0.2rem;
@@ -62,28 +62,28 @@
   width: 100%;
   appearance: none;
   position: relative;
-  background-color: var(--color-background);
+  background-color: var(--color-authentic-white);
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease;
   cursor: pointer;
   font-size: 1.4rem;
-  color: var(--color-text);
-  border-color: var(--color-arrow);
+  color: var(--color-prune);
+  border-color: var(--color-hydrocarbon);
 
   &:has(option.placeholder:checked) {
-    color: var(--color-text-empty);
+    color: var(--color-frost-silver);
   }
 
   &:disabled {
     cursor: not-allowed;
-    background-color: var(--color-disabled);
-    border-color: var(--color-disabled);
+    background-color: var(--color-iodine);
+    border-color: var(--color-iodine);
   }
 
   &:invalid {
-    border-color: var(--color-error);
-    background-color: var(--color-background);
+    border-color: var(--color-emerson);
+    background-color: var(--color-authentic-white);
   }
 
   &:focus {
@@ -92,9 +92,9 @@
 }
 
 option {
-  color: var(--color-text);
+  color: var(--color-prune);
 
   &:disabled {
-    color: var(--color-text-empty);
+    color: var(--color-frost-silver);
   }
 }

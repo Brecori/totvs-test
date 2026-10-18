@@ -7,45 +7,50 @@
 .add-option-container {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
-.add-option-title {
+.options-title {
   font-size: 1.6rem;
-  color: var(--color-text);
-}
-
-.add-option-inputs {
-  display: flex;
-  gap: 2.6rem;
-  align-items: center;
+  color: var(--color-prune);
 }
 
 .add-option-form {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  width: 100%;
+}
+
+.add-option-inputs {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
 }
 
 .add-option-button {
   padding: 1.2rem 2.4rem;
   font-size: 1.4rem;
-  color: var(--color-hover);
-  background-color: var(--color-background);
-  border: 0.1rem solid var(--color-hover);
+  color: var(--color-tech-white);
+  background-color: var(--color-authentic-blue);
+  border: 0.1rem solid var(--color-authentic-blue);
   border-radius: 0.4rem;
-  max-width: 30rem;
+  max-width: 16rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   &:hover {
-    background-color: var(--color-background-hover);
+    background-color: transparent;
+    color: var(--color-authentic-blue);
   }
 }
 
 .add-option-error {
   font-size: 1.4rem;
-  color: var(--color-error);
+  color: var(--color-emerson);
 }
 
 .options-container {
@@ -56,34 +61,47 @@
 
 .options-title {
   font-size: 1.6rem;
-  color: var(--color-text);
+  color: var(--color-prune);
 }
 
 .options-table {
   width: 100%;
   border-collapse: collapse;
-  border: 0.1rem solid var(--color-disabled);
+  border: 0.1rem solid var(--color-iodine);
+}
+
+.options-table thead {
+  background-color: var(--color-bright-grey);
+  color: var(--color-prune);
+}
+
+.options-table th {
+  font-size: 1.8rem;
+}
+
+.options-table td {
+  font-size: 1.6rem;
 }
 
 .options-table th,
 .options-table td {
   padding: 1.2rem;
   text-align: left;
-  border: 0.1rem solid var(--color-disabled);
-  font-size: 1.4rem;
+  border-bottom: 0.1rem solid var(--color-iodine);
 }
 
 .options-table-button {
-  padding: 0.8rem 1.6rem;
-  font-size: 1.4rem;
-  color: var(--color-hover);
-  background-color: var(--color-background);
-  border: 0.1rem solid var(--color-hover);
-  border-radius: 0.4rem;
+  color: var(--color-emerson);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+}
 
-  &:hover {
-    background-color: var(--color-background-hover);
-  }
+.options-table-value {
+  color: var(--color-prune);
+  background-color: var(--color-iodine);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-family: monospace;
 }

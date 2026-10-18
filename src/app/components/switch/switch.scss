@@ -5,7 +5,7 @@
   height: 1.6rem;
 
   &:focus-within {
-    outline-color: var(--color-focus);
+    outline-color: var(--color-black-rock);
     outline-width: 0.4rem;
     outline-style: solid;
     outline-offset: 0.4rem;
@@ -33,11 +33,11 @@
   &:disabled {
     & + .switch-slider {
       cursor: not-allowed;
-      background-color: var(--color-disabled);
+      background-color: var(--color-iodine);
 
       &::before {
-        border-color: var(--color-text-empty);
-        background-color: var(--color-disabled);
+        border-color: var(--color-frost-silver);
+        background-color: var(--color-iodine);
       }
     }
   }
@@ -45,8 +45,8 @@
   &:disabled:checked {
     & + .switch-slider {
       &::before {
-        background-color: var(--color-text-empty);
-        border-color: var(--color-text-empty);
+        background-color: var(--color-frost-silver);
+        border-color: var(--color-frost-silver);
       }
     }
   }
@@ -54,8 +54,8 @@
   &:hover:not(:checked):not(:disabled) {
     & + .switch-slider {
       &::before {
-        background-color: var(--color-background-hover);
-        border-color: var(--color-hover);
+        background-color: var(--color-bright-grey);
+        border-color: var(--color-persian-blue);
       }
     }
   }
@@ -68,7 +68,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-disabled);
+  background-color: var(--color-iodine);
   border-radius: 1.6rem;
   transition: background-color 0.3s ease;
 
@@ -79,7 +79,7 @@
     width: 2.4rem;
     border-radius: 100%;
     left: 0;
-    border: 0.3rem solid var(--color-arrow);
+    border: 0.3rem solid var(--color-hydrocarbon);
     bottom: 50%;
     transform: translateY(50%) translateX(-0.6rem);
     background-color: var(--color-white);

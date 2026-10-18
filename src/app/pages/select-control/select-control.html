@@ -7,7 +7,7 @@
   />
 
   <div controls class="add-option-container">
-    <h3 class="add-option-title">Adicionar Opção</h3>
+    <h3 class="options-title">Adicionar Opção</h3>
     <form class="add-option-form" (submit)="addOption()">
       <div class="add-option-inputs">
         <app-input-text label="Value" [(value)]="newOption.value" />
@@ -44,7 +44,9 @@
         @for (option of options; track option.value) {
           <tr>
             <td>{{ option.label }}</td>
-            <td>{{ option.value }}</td>
+            <td>
+              <span class="options-table-value">{{ option.value }}</span>
+            </td>
             <td>{{ option.disabled === true ? 'Sim' : 'Não' }}</td>
             <td>
               {{ option.value === reactiveControl.value ? 'Selecionado' : 'Não selecionado' }}
