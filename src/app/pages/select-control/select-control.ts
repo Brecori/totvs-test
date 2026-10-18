@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ControlPage } from '../../components/control-page/control-page';
 import { Select } from '../../components/select/select';
 import { Checkbox } from '../../components/checkbox/checkbox';
 import { InputText } from '../../components/input/input';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SelectOption } from '../../components/select/select-option';
+import { FormMode } from '../../components/control-page/form-mode';
 
 @Component({
   imports: [ControlPage, Select, Checkbox, InputText, ReactiveFormsModule, FormsModule],
@@ -13,6 +14,7 @@ import { SelectOption } from '../../components/select/select-option';
   templateUrl: './select-control.html',
 })
 export class SelectControl {
+  readonly requiredValidator = Validators.required;
   options: SelectOption[] = [
     { value: 'option1', label: 'Option 1' },
     { value: 'option2', label: 'Option 2' },
@@ -22,6 +24,7 @@ export class SelectControl {
   newOption: SelectOption = { value: '', label: '', disabled: false };
   optionError = '';
   placeholder = '';
+  readonly formMode = signal<FormMode>('reactive');
 
   readonly reactiveControl = new FormControl('', {
     nonNullable: true,
@@ -33,6 +36,15 @@ export class SelectControl {
     } else {
       this.reactiveControl.enable();
     }
+  }
+
+  setReactiveRequired(required: boolean): void {
+    if (required) {
+      this.reactiveControl.setValidators([Validators.required]);
+    } else {
+      this.reactiveControl.clearValidators();
+    }
+    this.reactiveControl.updateValueAndValidity();
   }
 
   deleteOption(value: string): void {

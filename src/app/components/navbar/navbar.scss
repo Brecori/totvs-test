@@ -2,6 +2,10 @@
   height: 6rem;
   border-bottom: 0.2rem solid var(--color-cold-white);
   background-color: var(--color-authentic-white);
+
+  @media (max-width: 599px) {
+    width: 100%;
+  }
 }
 
 .navbar-container {
@@ -15,6 +19,10 @@
 .title {
   font-size: 2.4rem;
   color: var(--color-cosmos);
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
 }
 
 .user-info {
@@ -25,10 +33,19 @@
   color: var(--color-cosmos);
   transition: transform 0.3s ease;
   font-weight: 400;
+
+  @media (max-width: 1024px) {
+    gap: 0.8rem;
+  }
 }
 
 .user-info img {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+
+  @media (max-width: 1024px) {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
 }

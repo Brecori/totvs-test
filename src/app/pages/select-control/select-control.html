@@ -1,11 +1,34 @@
-<app-control-page [component]="'Select'">
-  <app-select
-    preview
-    [formControl]="reactiveControl"
-    [options]="options"
-    [placeholder]="placeholder"
-  />
+<app-control-page
+  [component]="'Select'"
+  [formMode]="formMode()"
+  (formModeChange)="formMode.set($event)"
+>
+  <div preview>
+    @if (formMode() === 'ngModel') {
+      <app-select
+        [ngModel]="reactiveControl.value"
+        (ngModelChange)="reactiveControl.setValue($event)"
+        [options]="options"
+        [placeholder]="placeholder"
+        [isRequired]="reactiveControl.hasValidator(requiredValidator)"
+        [disabled]="reactiveControl.disabled"
+      />
+    } @else {
+      <app-select
+        [formControl]="reactiveControl"
+        [options]="options"
+        [placeholder]="placeholder"
+        [isRequired]="reactiveControl.hasValidator(requiredValidator)"
+      />
+    }
+  </div>
 
+  <app-input-text
+    controls
+    label="Placeholder"
+    [value]="placeholder"
+    (valueChange)="placeholder = $event"
+  />
   <div controls class="add-option-container">
     <h3 class="options-title">Adicionar Opção</h3>
     <form class="add-option-form" (submit)="addOption()">
@@ -20,13 +43,6 @@
       }
     </form>
   </div>
-
-  <app-input-text
-    controls
-    label="Placeholder"
-    [value]="placeholder"
-    (valueChange)="placeholder = $event"
-  />
 
   <div class="options-container" controls>
     <h3 class="options-title">Opções</h3>
@@ -67,5 +83,12 @@
     label="Desabilitado"
     [isChecked]="reactiveControl.disabled"
     (isCheckedChange)="setReactiveDisabled($event)"
+  />
+
+  <app-checkbox
+    controls
+    label="Obrigatório"
+    [isChecked]="reactiveControl.hasValidator(requiredValidator)"
+    (isCheckedChange)="setReactiveRequired($event)"
   />
 </app-control-page>

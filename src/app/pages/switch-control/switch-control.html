@@ -1,5 +1,19 @@
 <app-control-page [component]="'Switch'">
-  <app-switch preview [formControl]="reactiveControl" />
+
+  <div preview>
+    @if (formMode() === 'ngModel') {
+      <app-switch
+        [ngModel]="reactiveControl.value"
+        (ngModelChange)="reactiveControl.setValue($event)"
+        [disabled]="reactiveControl.disabled"
+      />
+    } @else {
+      <app-switch
+        [formControl]="reactiveControl"
+        [disabled]="reactiveControl.disabled"
+      />
+    }
+  </div>
 
   <app-checkbox
     controls

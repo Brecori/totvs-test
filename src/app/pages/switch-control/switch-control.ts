@@ -3,6 +3,7 @@ import { Switch } from '../../components/switch/switch';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Checkbox } from '../../components/checkbox/checkbox';
 import { ControlPage } from '../../components/control-page/control-page';
+import { FormMode } from '../../components/control-page/form-mode';
 
 @Component({
   imports: [Switch, Checkbox, FormsModule, ReactiveFormsModule, ControlPage],
@@ -11,6 +12,7 @@ import { ControlPage } from '../../components/control-page/control-page';
   templateUrl: './switch-control.html',
 })
 export class SwitchControl {
+  protected readonly formMode = signal<FormMode>('reactive');
   readonly modelValue = signal(false);
   readonly modelDisabled = signal(false);
 

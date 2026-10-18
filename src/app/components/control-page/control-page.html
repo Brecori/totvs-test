@@ -1,7 +1,10 @@
 <section class="container">
   <div class="preview-container">
-    <header>
+    <header class="preview-header">
       <h2 class="title">Componente {{ component }}</h2>
+      <button type="button" class="form-mode-button" (click)="toggleFormMode()">
+        Modo: {{ formMode === 'reactive' ? 'Reactive Forms' : 'ngModel' }}
+      </button>
     </header>
     <div class="preview">
       <ng-content select="[preview]" />
@@ -11,7 +14,7 @@
     <h3 class="controls-title">Controles</h3>
 
     <div class="controls">
-      <ng-content select="[controls]" />
+     <ng-content select="[controls]" />
     </div>
   </div>
 </section>

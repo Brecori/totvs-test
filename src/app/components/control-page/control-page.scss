@@ -3,6 +3,8 @@
   flex-direction: column;
   height: 100%;
   background-color: var(--color-white-lilac);
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .preview-container {
@@ -11,7 +13,31 @@
   gap: 2rem;
   width: 100%;
   border-bottom: 0.1rem solid var(--color-iodine);
-  padding: 2rem;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-mode-button {
+  padding: 1rem 1.6rem;
+  width: 25rem;
+  border: 0.1rem solid var(--color-authentic-blue);
+  border-radius: 0.4rem;
+  background-color: var(--color-white);
+  color: var(--color-authentic-blue);
+  font: inherit;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-bright-grey);
+  }
 }
 
 .title {
@@ -20,7 +46,7 @@
 }
 
 .controls-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--color-prune);
 }
 
@@ -41,8 +67,13 @@
   gap: 4rem;
   width: 100%;
   height: 100%;
-  padding: 2rem;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-authentic-blue) var(--color-white);
+  background-color: var(--color-authentic-white);
+  border: 0.1rem solid var(--color-iodine);
+  padding: 2rem;
+  border-radius: 0.4rem;
 }
 
 .controls {
