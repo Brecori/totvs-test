@@ -1,0 +1,19 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-label {
+  font-size: 1.6rem;
+  color: var(--color-hover);
+}
+
+.input {
+  min-height: 4.4rem;
+  padding: 1.1rem 0.8rem;
+  min-width: 35rem;
+  max-width: 35rem;
+  width: 100%;
+  font-size: 1.4rem;
+}

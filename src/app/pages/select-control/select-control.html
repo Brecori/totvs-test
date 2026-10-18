@@ -1,4 +1,69 @@
 <app-control-page [component]="'Select'">
-  <app-select preview />
-  <app-input controls label="Placeholder" />
+  <app-select
+    preview
+    [formControl]="reactiveControl"
+    [options]="options"
+    [placeholder]="placeholder"
+  />
+
+  <div controls class="add-option-container">
+    <h3 class="add-option-title">Adicionar Opção</h3>
+    <form class="add-option-form" (submit)="addOption()">
+      <div class="add-option-inputs">
+        <app-input-text label="Value" [(value)]="newOption.value" />
+        <app-input-text label="Label" [(value)]="newOption.label" />
+      </div>
+      <app-checkbox label="Disabled" [(isChecked)]="newOption.disabled!" />
+      <button class="add-option-button" type="submit">Adicionar</button>
+      @if (optionError) {
+        <p class="add-option-error" role="status">{{ optionError }}</p>
+      }
+    </form>
+  </div>
+
+  <app-input-text
+    controls
+    label="Placeholder"
+    [value]="placeholder"
+    (valueChange)="placeholder = $event"
+  />
+
+  <div class="options-container" controls>
+    <h3 class="options-title">Opções</h3>
+    <table class="options-table">
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Value</th>
+          <th>Disabled</th>
+          <th>Selecionado</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (option of options; track option.value) {
+          <tr>
+            <td>{{ option.label }}</td>
+            <td>{{ option.value }}</td>
+            <td>{{ option.disabled === true ? 'Sim' : 'Não' }}</td>
+            <td>
+              {{ option.value === reactiveControl.value ? 'Selecionado' : 'Não selecionado' }}
+            </td>
+            <td>
+              <button class="options-table-button" (click)="deleteOption(option.value)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <app-checkbox
+    controls
+    label="Desabilitado"
+    [isChecked]="reactiveControl.disabled"
+    (isCheckedChange)="setReactiveDisabled($event)"
+  />
 </app-control-page>

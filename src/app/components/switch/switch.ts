@@ -22,8 +22,8 @@ export class Switch implements ControlValueAccessor {
   private onChange: (value: boolean) => void = () => {};
   protected onTouched: () => void = () => {};
 
-  writeValue(value: boolean): void {
-    this.isChecked.set(value);
+  writeValue(value: boolean | null): void {
+    this.isChecked.set(value ?? false);
   }
 
   registerOnChange(fn: (value: boolean) => void): void {
