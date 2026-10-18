@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="preview-container">
+    <header>
+      <h1>Componente {{ component }}</h1>
+    </header>
+    <div class="preview">
+      <ng-content select="[preview]" />
+    </div>
+  </div>
+  <div class="controls-container">
+    <h2>Controles</h2>
+
+    <div class="controls">
+      <ng-content select="[controls]" />
+    </div>
+  </div>
+</section>

@@ -1,27 +1,17 @@
-<section class="container">
-  <div class="preview-container">
-    <header>
-      <h1>Componente Switch</h1>
-    </header>
-    <div class="preview">
-      <app-switch [formControl]="reactiveControl" />
-    </div>
-  </div>
-  <div class="controls-container">
-    <h2>Controles</h2>
+<app-control-page [component]="'Switch'">
+  <app-switch preview [formControl]="reactiveControl" />
 
-    <div class="controls">
-      <app-checkbox
-        label="Ativo / Desativo"
-        [isChecked]="reactiveControl.value"
-        (isCheckedChange)="reactiveControl.setValue($event)"
-      />
+  <app-checkbox
+    controls
+    label="Ativo / Desativo"
+    [isChecked]="reactiveControl.value"
+    (isCheckedChange)="reactiveControl.setValue($event)"
+  />
 
-      <app-checkbox
-        label="Desabilitado"
-        [isChecked]="reactiveControl.disabled"
-        (isCheckedChange)="setReactiveDisabled($event)"
-      />
-    </div>
-  </div>
-</section>
+  <app-checkbox
+    controls
+    label="Desabilitado"
+    [isChecked]="reactiveControl.disabled"
+    (isCheckedChange)="setReactiveDisabled($event)"
+  />
+</app-control-page>

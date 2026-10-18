@@ -1,7 +1,10 @@
 <aside class="aside-container">
   <h2 class="aside-title">Componentes</h2>
   <ul class="aside-list">
-    <li class="aside-list-item"><a href="#">Select</a></li>
-    <li class="aside-list-item"><a href="#">Switch</a></li>
+    @for (link of links; track link) {
+      <li class="aside-list-item" routerLinkActive="active">
+        <a [routerLink]="link.path" class="aside-list-link">{{ link.label }}</a>
+      </li>
+    }
   </ul>
 </aside>

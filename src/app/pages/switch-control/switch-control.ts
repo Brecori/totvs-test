@@ -2,9 +2,10 @@ import { Component, signal } from '@angular/core';
 import { Switch } from '../../components/switch/switch';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Checkbox } from '../../components/checkbox/checkbox';
+import { ControlPage } from '../../components/control-page/control-page';
 
 @Component({
-  imports: [Switch, Checkbox, FormsModule, ReactiveFormsModule],
+  imports: [Switch, Checkbox, FormsModule, ReactiveFormsModule, ControlPage],
   selector: 'app-switch-control',
   styleUrl: './switch-control.scss',
   templateUrl: './switch-control.html',
