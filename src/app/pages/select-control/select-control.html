@@ -3,7 +3,7 @@
   [formMode]="formMode()"
   (formModeChange)="formMode.set($event)"
 >
-  <div preview>
+  <div preview class="select-preview">
     @if (formMode() === 'ngModel') {
       <app-select
         [ngModel]="reactiveControl.value"
@@ -46,36 +46,38 @@
 
   <div class="options-container" controls>
     <h3 class="options-title">Opções</h3>
-    <table class="options-table">
-      <thead>
-        <tr>
-          <th>Label</th>
-          <th>Value</th>
-          <th>Disabled</th>
-          <th>Selecionado</th>
-          <th>Excluir</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (option of options; track option.value) {
+    <div class="options-table-wrapper">
+      <table class="options-table">
+        <thead>
           <tr>
-            <td>{{ option.label }}</td>
-            <td>
-              <span class="options-table-value">{{ option.value }}</span>
-            </td>
-            <td>{{ option.disabled === true ? 'Sim' : 'Não' }}</td>
-            <td>
-              {{ option.value === reactiveControl.value ? 'Selecionado' : 'Não selecionado' }}
-            </td>
-            <td>
-              <button class="options-table-button" (click)="deleteOption(option.value)">
-                Delete
-              </button>
-            </td>
+            <th>Label</th>
+            <th>Value</th>
+            <th>Disabled</th>
+            <th>Selecionado</th>
+            <th>Excluir</th>
           </tr>
-        }
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          @for (option of options; track option.value) {
+            <tr>
+              <td>{{ option.label }}</td>
+              <td>
+                <span class="options-table-value">{{ option.value }}</span>
+              </td>
+              <td>{{ option.disabled === true ? 'Sim' : 'Não' }}</td>
+              <td>
+                {{ option.value === reactiveControl.value ? 'Selecionado' : 'Não selecionado' }}
+              </td>
+              <td>
+                <button class="options-table-button" (click)="deleteOption(option.value)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <app-checkbox

@@ -89,6 +89,10 @@
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 599px) {
+    min-width: 100%;
+  }
 }
 
 option {

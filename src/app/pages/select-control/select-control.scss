@@ -4,6 +4,12 @@
   height: 100%;
 }
 
+.select-preview {
+  @media (max-width: 599px) {
+    width: 100%;
+  }
+}
+
 .add-option-container {
   display: flex;
   flex-direction: column;
@@ -62,6 +68,10 @@
 .options-title {
   font-size: 1.6rem;
   color: var(--color-prune);
+}
+
+.options-table-wrapper {
+  overflow-x: auto;
 }
 
 .options-table {

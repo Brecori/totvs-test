@@ -1,9 +1,26 @@
 <header class="navbar">
   <div class="navbar-container">
-    <h1 class="title">Teste TOTVS</h1>
-    <a href="https://github.com/brecori" rel="noopener noreferrer" target="_blank" class="user-info">
+    <div class="navbar-menu-container">
+      <button class="menu-button" (click)="onToggleMenu()" [ngClass]="{ active: isMenuOpen }">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <h1 class="title">Teste TOTVS</h1>
+    </div>
+    <a
+      href="https://github.com/brecori"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="user-info"
+    >
       <img src="https://github.com/brecori.png" alt="Foto de Breno Tosi Barros" />
       <h2>Breno Tosi Barros</h2>
     </a>
   </div>
 </header>
+<app-aside-bar
+  class="menu-container"
+  [ngClass]="{ active: isMenuOpen }"
+  (linkSelected)="closeMenu()"
+/>

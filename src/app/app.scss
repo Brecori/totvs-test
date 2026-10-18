@@ -9,6 +9,11 @@ main {
   justify-content: center;
   width: 100%;
   height: calc(100vh - 6rem);
+
+  @media (max-width: 599px) {
+    height: 100%;
+    margin-top: 6rem;
+  }
 }
 
 .container {
@@ -19,4 +24,10 @@ main {
   width: 100%;
   flex-direction: column;
   gap: 8rem;
+}
+
+.menu-container {
+  @media (max-width: 599px) {
+    display: none;
+  }
 }
