@@ -1,4 +1,13 @@
-<label class="switch-container" role="switch">
-  <input type="checkbox" class="switch-input"/>
-  <span class="switch-slider"></span>
+<label class="switch-container">
+  <input
+    #checkbox
+    type="checkbox"
+    class="switch-input"
+    role="switch"
+    [disabled]="isDisabled()"
+    [checked]="isChecked()"
+    (change)="updateValue(checkbox.checked)"
+    (blur)="onTouched()"
+  />
+  <span class="switch-slider" aria-hidden="true"></span>
 </label>

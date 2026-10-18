@@ -1,13 +1,21 @@
-main {
+:host {
   background-color: var(--color-main-background);
+  max-height: 100vh;
+}
+
+main {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 6rem);
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   flex-direction: column;
   gap: 8rem;

@@ -29,6 +29,36 @@
       }
     }
   }
+
+  &:disabled {
+    & + .switch-slider {
+      cursor: not-allowed;
+      background-color: var(--color-disabled);
+
+      &::before {
+        border-color: var(--color-text-empty);
+        background-color: var(--color-disabled);
+      }
+    }
+  }
+
+  &:disabled:checked {
+    & + .switch-slider {
+      &::before {
+        background-color: var(--color-text-empty);
+        border-color: var(--color-text-empty);
+      }
+    }
+  }
+
+  &:hover:not(:checked):not(:disabled) {
+    & + .switch-slider {
+      &::before {
+        background-color: var(--color-background-hover);
+        border-color: var(--color-hover);
+      }
+    }
+  }
 }
 
 .switch-slider {

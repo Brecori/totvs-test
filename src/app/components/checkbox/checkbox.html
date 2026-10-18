@@ -1,0 +1,11 @@
+<label class="checkbox-container">
+  <input
+    #checkbox
+    type="checkbox"
+    class="checkbox-input"
+    [checked]="isChecked"
+    (change)="isCheckedChange.emit(checkbox.checked)"
+  />
+  <span class="checkbox-custom" aria-hidden="true"></span>
+  {{ label }}
+</label>
