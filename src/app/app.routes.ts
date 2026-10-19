@@ -6,4 +6,5 @@ export const routes: Routes = [
   { path: '', redirectTo: 'switch', pathMatch: 'full' },
   { path: 'switch', component: SwitchControl },
   { path: 'select', component: SelectControl },
+  { path: '**', redirectTo: 'switch' },
 ];
