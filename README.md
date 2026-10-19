@@ -256,7 +256,6 @@ A cada push na branch `main`, o workflow executa as seguintes etapas:
    npm run build -- --base-href=/totvs-test/
    ```
 
-5. Cria uma cópia do `index.html` como `404.html`, utilizada como fallback para acessos diretos às rotas da aplicação.
-6. Envia os arquivos de `dist/totvs-test/browser/` como artefato de publicação.
-7. Publica o artefato no GitHub Pages.
+5. Envia os arquivos de `dist/totvs-test/browser/` como artefato de publicação.
+6. Publica o artefato no GitHub Pages.
 
