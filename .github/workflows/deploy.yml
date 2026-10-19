@@ -32,6 +32,9 @@ jobs:
       - name: Build
         run: npm run build -- --base-href=/totvs-test/
 
+      - name: Create Fallback 404 page
+        run: cp dist/totvs-test/browser/index.html dist/totvs-test/browser/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
