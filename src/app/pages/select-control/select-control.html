@@ -25,19 +25,14 @@
     }
   </div>
 
-  <p controls class="actual-value">
+  <p class="actual-value">
     Valor atual:
     <span>{{ !reactiveControl.value ? 'Nenhum' : reactiveControl.value }}</span>
   </p>
 
-  <app-input-text
-    controls
-    label="Placeholder"
-    [value]="placeholder"
-    (valueChange)="placeholder = $event"
-  />
-  <div controls class="add-option-container">
-    <h3 class="options-title">Adicionar Opção</h3>
+  <app-input-text label="Placeholder" [value]="placeholder" (valueChange)="placeholder = $event" />
+  <div class="add-option-container">
+    <h4 class="options-title">Adicionar Opção</h4>
     <form class="add-option-form" (submit)="addOption()">
       <div class="add-option-inputs">
         <app-input-text label="Value" [(value)]="newOption.value" />
@@ -51,17 +46,17 @@
     </form>
   </div>
 
-  <div class="options-container" controls>
-    <h3 class="options-title">Opções</h3>
+  <div class="options-container">
+    <h4 class="options-title">Opções</h4>
     <div class="options-table-wrapper">
       <table class="options-table">
         <thead>
           <tr>
-            <th>Label</th>
-            <th>Value</th>
-            <th>Disabled</th>
-            <th>Selecionado</th>
-            <th>Excluir</th>
+            <th scope="col">Label</th>
+            <th scope="col">Value</th>
+            <th scope="col">Disabled</th>
+            <th scope="col">Selecionado</th>
+            <th scope="col">Excluir</th>
           </tr>
         </thead>
         <tbody>
@@ -77,7 +72,7 @@
               </td>
               <td>
                 <button class="options-table-button" (click)="deleteOption(option.value)">
-                  Delete
+                  Deletar
                 </button>
               </td>
             </tr>
@@ -88,16 +83,10 @@
   </div>
 
   <app-checkbox
-    controls
     label="Desabilitado"
     [isChecked]="reactiveControl.disabled"
     (isCheckedChange)="setReactiveDisabled($event)"
   />
 
-  <app-checkbox
-    controls
-    label="Erro"
-    [isChecked]="error()"
-    (isCheckedChange)="setErrorState($event)"
-  />
+  <app-checkbox label="Erro" [isChecked]="error()" (isCheckedChange)="setErrorState($event)" />
 </app-control-page>

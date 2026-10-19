@@ -1,7 +1,14 @@
 <header class="navbar">
   <div class="navbar-container">
     <div class="navbar-menu-container">
-      <button class="menu-button" (click)="onToggleMenu()" [ngClass]="{ active: isMenuOpen }">
+      <button
+        class="menu-button"
+        (click)="onToggleMenu()"
+        [ngClass]="{ active: isMenuOpen }"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-label="Menu de Componentes"
+        aria-controls="menu-mobile"
+      >
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -12,10 +19,11 @@
       href="https://github.com/brecori"
       rel="noopener noreferrer"
       target="_blank"
+      aria-label="Perfil do Breno Tosi Barros no GitHub"
       class="user-info"
     >
       <img src="https://github.com/brecori.png" alt="Foto de Breno Tosi Barros" />
-      <h2>Breno Tosi Barros</h2>
+      <span>Breno Tosi Barros</span>
     </a>
   </div>
 </header>
@@ -23,4 +31,5 @@
   class="menu-container"
   [ngClass]="{ active: isMenuOpen }"
   (linkSelected)="closeMenu()"
+  [inert]="!isMenuOpen"
 />

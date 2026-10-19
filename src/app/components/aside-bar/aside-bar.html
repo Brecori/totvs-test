@@ -1,12 +1,16 @@
-<aside class="aside-container">
+<nav class="aside-container">
   <h2 class="aside-title">Componentes</h2>
   <ul class="aside-list">
     @for (link of links; track link) {
       <li class="aside-list-item" routerLinkActive="active">
-        <a [routerLink]="link.path" class="aside-list-link" (click)="linkSelected.emit()">{{
-          link.label
-        }}</a>
+        <a
+          [routerLink]="link.path"
+          class="aside-list-link"
+          (click)="linkSelected.emit()"
+          ariaCurrentWhenActive="page"
+          >{{ link.label }}</a
+        >
       </li>
     }
   </ul>
-</aside>
+</nav>

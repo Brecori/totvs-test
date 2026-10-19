@@ -12,7 +12,6 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  border-bottom: 0.1rem solid var(--color-iodine);
 }
 
 .preview-header {
@@ -38,8 +37,7 @@
   font: inherit;
   font-size: 1.4rem;
   cursor: pointer;
-  transition:
-    background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: var(--color-bright-grey);
