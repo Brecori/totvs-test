@@ -3,3 +3,16 @@
   width: 100%;
   height: 100%;
 }
+
+.actual-value {
+  font-size: 1.8rem;
+  color: var(--color-prune);
+
+  span {
+    font-family: monospace;
+    font-size: 1.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    background-color: var(--color-iodine);
+  }
+}

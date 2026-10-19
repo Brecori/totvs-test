@@ -25,6 +25,7 @@ export class SelectControl {
   optionError = '';
   placeholder = '';
   readonly formMode = signal<FormMode>('reactive');
+  readonly error = signal<boolean>(false);
 
   readonly reactiveControl = new FormControl('', {
     nonNullable: true,
@@ -36,15 +37,6 @@ export class SelectControl {
     } else {
       this.reactiveControl.enable();
     }
-  }
-
-  setReactiveRequired(required: boolean): void {
-    if (required) {
-      this.reactiveControl.setValidators([Validators.required]);
-    } else {
-      this.reactiveControl.clearValidators();
-    }
-    this.reactiveControl.updateValueAndValidity();
   }
 
   deleteOption(value: string): void {
@@ -69,5 +61,9 @@ export class SelectControl {
     this.options = [...this.options, { value, label, disabled: this.newOption.disabled }];
     this.newOption = { value: '', label: '', disabled: false };
     this.optionError = '';
+  }
+
+  setErrorState(hasError: boolean): void {
+    this.error.set(hasError);
   }
 }

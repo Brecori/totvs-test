@@ -20,7 +20,7 @@ export class Select implements ControlValueAccessor {
   @Input() label!: string;
   options = input<SelectOption[]>([]);
   readonly placeholder = input<string | null>(null);
-  readonly isRequired = input<boolean>(false);
+  readonly error = input<boolean>(false);
 
   protected readonly isDisabled = signal(false);
   protected readonly value = signal('');

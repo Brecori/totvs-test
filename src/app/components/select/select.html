@@ -1,9 +1,8 @@
-<div class="select-wrapper" [ngClass]="{ disabled: isDisabled(), required: isRequired() }">
+<div class="select-wrapper" [ngClass]="{ disabled: isDisabled(), error: error() }">
   <select
     #selectElement
     class="select"
     [disabled]="isDisabled()"
-    [required]="isRequired()"
     (change)="updateValue(selectElement.value)"
     (blur)="onTouched()"
     [attr.aria-label]="label"

@@ -25,9 +25,14 @@
     }
   }
 
-  &.required:has(.select:invalid) {
+  &.error {
     &::after {
       border-color: var(--color-emerson);
+    }
+
+    .select {
+      border-color: var(--color-emerson);
+      background-color: var(--color-authentic-white);
     }
   }
 
@@ -78,11 +83,6 @@
     cursor: not-allowed;
     background-color: var(--color-iodine);
     border-color: var(--color-iodine);
-  }
-
-  &:invalid {
-    border-color: var(--color-emerson);
-    background-color: var(--color-authentic-white);
   }
 
   &:focus {

@@ -21,12 +21,11 @@
     }
   </div>
 
+  <p controls class="actual-value">Valor atual: <span>{{ lastValue() === null ? 'false' : lastValue() }}</span></p>
   <app-checkbox
     controls
     label="Desabilitado"
     [isChecked]="reactiveControl.disabled"
     (isCheckedChange)="setReactiveDisabled($event)"
   />
-
-  <p controls>{{ lastValue() === null ? 'Nenhum evento' : lastValue() }}</p>
 </app-control-page>

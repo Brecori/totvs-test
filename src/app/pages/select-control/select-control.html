@@ -10,7 +10,7 @@
         (ngModelChange)="reactiveControl.setValue($event)"
         [options]="options"
         [placeholder]="placeholder"
-        [isRequired]="reactiveControl.hasValidator(requiredValidator)"
+        [error]="error()"
         [disabled]="reactiveControl.disabled"
         [label]="'Componente Select de Demonstração'"
       />
@@ -19,11 +19,16 @@
         [formControl]="reactiveControl"
         [options]="options"
         [placeholder]="placeholder"
-        [isRequired]="reactiveControl.hasValidator(requiredValidator)"
+        [error]="error()"
         [label]="'Componente Select de Demonstração'"
       />
     }
   </div>
+
+  <p controls class="actual-value">
+    Valor atual:
+    <span>{{ !reactiveControl.value ? 'Nenhum' : reactiveControl.value }}</span>
+  </p>
 
   <app-input-text
     controls
@@ -91,8 +96,8 @@
 
   <app-checkbox
     controls
-    label="Obrigatório"
-    [isChecked]="reactiveControl.hasValidator(requiredValidator)"
-    (isCheckedChange)="setReactiveRequired($event)"
+    label="Erro"
+    [isChecked]="error()"
+    (isCheckedChange)="setErrorState($event)"
   />
 </app-control-page>
