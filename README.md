@@ -135,7 +135,6 @@ Exemplo de lista:
 Na página do Select, é possível:
 
 - Alternar o modo de integração com formulários.
-- Personalizar o texto do placeholder.
 - Adicionar opções informando valor, texto e estado desabilitado.
 - Consultar as opções cadastradas em uma tabela.
 - Excluir opções da lista.

@@ -1,4 +1,4 @@
-import { Component, Input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FormMode } from './form-mode';
 
 @Component({
@@ -8,13 +8,13 @@ import { FormMode } from './form-mode';
   templateUrl: './control-page.html',
 })
 export class ControlPage {
-  @Input() component!: string;
-  @Input() formMode: FormMode = 'reactive';
+  readonly component = input.required<string>();
+  readonly formMode = input<FormMode>('reactive');
 
   readonly formModeChange = output<FormMode>();
 
   protected toggleFormMode(): void {
-    const nextMode = this.formMode === 'reactive' ? 'ngModel' : 'reactive';
+    const nextMode: FormMode = this.formMode() === 'reactive' ? 'ngModel' : 'reactive';
     this.formModeChange.emit(nextMode);
   }
 }

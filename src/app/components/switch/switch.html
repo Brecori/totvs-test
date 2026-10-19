@@ -8,7 +8,7 @@
     [checked]="isChecked()"
     (change)="updateValue(checkbox.checked)"
     (blur)="onTouched()"
-    [attr.aria-label]="label"
+    [attr.aria-label]="label()"
   />
   <span class="switch-slider" aria-hidden="true"></span>
 </label>

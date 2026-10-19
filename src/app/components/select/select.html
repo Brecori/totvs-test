@@ -5,7 +5,8 @@
     [disabled]="isDisabled()"
     (change)="updateValue(selectElement.value)"
     (blur)="onTouched()"
-    [attr.aria-label]="label"
+    [attr.aria-label]="label()"
+    [attr.aria-invalid]="error()"
     name="select"
   >
     <option value="" disabled selected class="placeholder" [selected]="value() === ''">

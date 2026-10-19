@@ -1,9 +1,9 @@
 <section class="container">
   <div class="preview-container">
     <header class="preview-header">
-      <h2 class="title">Componente {{ component }}</h2>
+      <h2 class="title">Componente {{ component() }}</h2>
       <button type="button" class="form-mode-button" (click)="toggleFormMode()">
-        Modo: {{ formMode === 'reactive' ? 'Reactive Forms' : 'ngModel' }}
+        Modo: {{ formMode() === 'reactive' ? 'Reactive Forms' : 'ngModel' }}
       </button>
     </header>
     <div class="preview">

@@ -14,7 +14,6 @@ import { FormMode } from '../../components/control-page/form-mode';
   templateUrl: './select-control.html',
 })
 export class SelectControl {
-  readonly requiredValidator = Validators.required;
   options: SelectOption[] = [
     { value: 'option1', label: 'Option 1' },
     { value: 'option2', label: 'Option 2' },
@@ -40,7 +39,10 @@ export class SelectControl {
 
   deleteOption(value: string): void {
     this.options = this.options.filter((option) => option.value !== value);
-    this.reactiveControl.setValue('');
+
+    if (this.reactiveControl.value === value) {
+      this.reactiveControl.setValue('');
+    }
   }
 
   addOption(): void {

@@ -1,10 +1,10 @@
 <label class="input-container">
-  <span class="input-label">{{ label }}</span>
+  <span class="input-label">{{ label() }}</span>
   <input
     #textInput
     type="text"
     class="input"
-    [value]="value"
+    [value]="value()"
     (input)="valueChange.emit(textInput.value)"
   />
 </label>

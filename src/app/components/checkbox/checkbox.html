@@ -3,8 +3,8 @@
     #checkbox
     type="checkbox"
     class="checkbox-input"
-    [checked]="isChecked"
+    [checked]="isChecked()"
     (change)="isCheckedChange.emit(checkbox.checked)"
   />
-  {{ label }}
+  {{ label() }}
 </label>

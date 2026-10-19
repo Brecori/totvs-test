@@ -1,4 +1,4 @@
-import { Component, Input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,8 +7,8 @@ import { Component, Input, output } from '@angular/core';
   templateUrl: './checkbox.html',
 })
 export class Checkbox {
-  @Input() label = '';
-  @Input() isChecked = false;
+  readonly label = input<string>('');
+  readonly isChecked = input<boolean>(false);
 
   readonly isCheckedChange = output<boolean>();
 }

@@ -14,8 +14,6 @@ import { FormMode } from '../../components/control-page/form-mode';
 export class SwitchControl {
   readonly lastValue = signal<boolean | null>(null);
   protected readonly formMode = signal<FormMode>('reactive');
-  readonly modelValue = signal(false);
-  readonly modelDisabled = signal(false);
 
   readonly reactiveControl = new FormControl(false, {
     nonNullable: true,

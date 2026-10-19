@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './aside-bar.html',
 })
 export class AsideBar {
-  @Output() readonly linkSelected = new EventEmitter<void>();
+  readonly linkSelected = output<void>();
   readonly links = [
     { path: 'switch', label: 'Switch' },
     { path: 'select', label: 'Select' },

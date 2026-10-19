@@ -1,4 +1,4 @@
-import { Component, Input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,8 +7,7 @@ import { Component, Input, output } from '@angular/core';
   templateUrl: './input.html',
 })
 export class InputText {
-  @Input() label = '';
-
-  @Input() value = '';
+  readonly label = input<string>('');
+  readonly value = input<string>('');
   readonly valueChange = output<string>();
 }

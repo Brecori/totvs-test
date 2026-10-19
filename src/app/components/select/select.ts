@@ -1,4 +1,4 @@
-import { Component, forwardRef, input, Input, signal } from '@angular/core';
+import { Component, forwardRef, input, signal } from '@angular/core';
 import type { SelectOption } from './select-option';
 import { NgClass } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -17,8 +17,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class Select implements ControlValueAccessor {
-  @Input() label!: string;
-  options = input<SelectOption[]>([]);
+  readonly label = input.required<string>();
+  readonly options = input.required<SelectOption[]>();
   readonly error = input<boolean>(false);
 
   protected readonly isDisabled = signal(false);

@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { AsideBar } from './components/aside-bar/aside-bar';
-import { SwitchControl } from './pages/switch-control/switch-control';
 import { Navbar } from './components/navbar/navbar';
 import { RouterOutlet } from '@angular/router';
 

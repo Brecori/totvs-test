@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, output, signal } from '@angular/core';
+import { Component, forwardRef, input, output, signal } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class Switch implements ControlValueAccessor {
   readonly valueChange = output<boolean>();
-  @Input() label!: string;
+  readonly label = input.required<string>();
 
   protected readonly isChecked = signal(false);
   protected readonly isDisabled = signal(false);
