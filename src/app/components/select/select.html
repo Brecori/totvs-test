@@ -8,15 +8,8 @@
     [attr.aria-label]="label"
     name="select"
   >
-    <option
-      value=""
-      disabled
-      selected
-      class="placeholder"
-      [hidden]="value() !== ''"
-      [selected]="value() === ''"
-    >
-      {{ placeholder() }}
+    <option value="" disabled selected class="placeholder" [selected]="value() === ''">
+      Selecione uma opção
     </option>
 
     @for (option of options(); track option.value) {

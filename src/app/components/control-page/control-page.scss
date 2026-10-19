@@ -51,10 +51,6 @@
 .title {
   font-size: 3rem;
   color: var(--color-prune);
-
-  @media (max-width: 599px) {
-    font-size: 2.5rem;
-  }
 }
 
 .controls-title {

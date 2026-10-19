@@ -23,7 +23,6 @@ export class SelectControl {
 
   newOption: SelectOption = { value: '', label: '', disabled: false };
   optionError = '';
-  placeholder = '';
   readonly formMode = signal<FormMode>('reactive');
   readonly error = signal<boolean>(false);
 

@@ -9,7 +9,6 @@
         [ngModel]="reactiveControl.value"
         (ngModelChange)="reactiveControl.setValue($event)"
         [options]="options"
-        [placeholder]="placeholder"
         [error]="error()"
         [disabled]="reactiveControl.disabled"
         [label]="'Componente Select de Demonstração'"
@@ -18,7 +17,6 @@
       <app-select
         [formControl]="reactiveControl"
         [options]="options"
-        [placeholder]="placeholder"
         [error]="error()"
         [label]="'Componente Select de Demonstração'"
       />
@@ -30,7 +28,6 @@
     <span>{{ !reactiveControl.value ? 'Nenhum' : reactiveControl.value }}</span>
   </p>
 
-  <app-input-text label="Placeholder" [value]="placeholder" (valueChange)="placeholder = $event" />
   <div class="add-option-container">
     <h4 class="options-title">Adicionar Opção</h4>
     <form class="add-option-form" (submit)="addOption()">
